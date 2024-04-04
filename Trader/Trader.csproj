@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AC5996B-808D-4E62-95F3-BF0FCC923152}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Trader</RootNamespace>
+    <AssemblyName>Trader</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.UI, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.Wizard, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Anasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anasayfa.Designer.cs">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FonAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FonAl.Designer.cs">
+      <DependentUpon>FonAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FonAnasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FonAnasayfa.Designer.cs">
+      <DependentUpon>FonAnasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FonGecmis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FonGecmis.Designer.cs">
+      <DependentUpon>FonGecmis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FonPortfoy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FonPortfoy.Designer.cs">
+      <DependentUpon>FonPortfoy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FonSat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FonSat.Designer.cs">
+      <DependentUpon>FonSat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FonSonuc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hesabim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hesabim.Designer.cs">
+      <DependentUpon>Hesabim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hisse.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HisseAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HisseAl.Designer.cs">
+      <DependentUpon>HisseAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HisseAnaliz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HisseAnaliz.Designer.cs">
+      <DependentUpon>HisseAnaliz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HisseEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HisseEkleme.Designer.cs">
+      <DependentUpon>HisseEkleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HisseGecmis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HisseGecmis.Designer.cs">
+      <DependentUpon>HisseGecmis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hisseler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hisseler.Designer.cs">
+      <DependentUpon>Hisseler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HisseSat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HisseSat.Designer.cs">
+      <DependentUpon>HisseSat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HisseSonuc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Izle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izle.Designer.cs">
+      <DependentUpon>Izle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategori.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kaydol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kaydol.Designer.cs">
+      <DependentUpon>Kaydol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Portfoy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Portfoy.Designer.cs">
+      <DependentUpon>Portfoy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Anasayfa.resx">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FonAl.resx">
+      <DependentUpon>FonAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FonAnasayfa.resx">
+      <DependentUpon>FonAnasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FonGecmis.resx">
+      <DependentUpon>FonGecmis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FonPortfoy.resx">
+      <DependentUpon>FonPortfoy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FonSat.resx">
+      <DependentUpon>FonSat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hesabim.resx">
+      <DependentUpon>Hesabim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HisseAl.resx">
+      <DependentUpon>HisseAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HisseAnaliz.resx">
+      <DependentUpon>HisseAnaliz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HisseEkleme.resx">
+      <DependentUpon>HisseEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HisseGecmis.resx">
+      <DependentUpon>HisseGecmis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hisseler.resx">
+      <DependentUpon>Hisseler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HisseSat.resx">
+      <DependentUpon>HisseSat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izle.resx">
+      <DependentUpon>Izle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kaydol.resx">
+      <DependentUpon>Kaydol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portfoy.resx">
+      <DependentUpon>Portfoy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anasayfa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geriDon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\hisseSil.ico" />
+    <None Include="Resources\fonGecmisIslem.png" />
+    <None Include="Resources\guncelleButton.ico" />
+    <None Include="Resources\hesabim.png" />
+    <None Include="Resources\fonAltSil.ico" />
+    <None Include="Resources\fonAltSat.png" />
+    <None Include="Resources\fonAltAl.ico" />
+    <None Include="Resources\fonlarSayfasi.png" />
+    <None Include="Resources\fonAltGif.gif" />
+    <None Include="Resources\fonGecmisButtonum.ico" />
+    <None Include="Resources\fonSilButtonum.ico" />
+    <None Include="Resources\fonEkleButtonum.ico" />
+    <None Include="Resources\fonGecmis.png" />
+    <None Include="Resources\fonSilButton.ico" />
+    <None Include="Resources\kategoriEkle.ico" />
+    <None Include="Resources\kategoriSil.ico" />
+    <None Include="Resources\alButton.ico" />
+    <None Include="Resources\satButton.ico" />
+    <None Include="Resources\hisseSatGif.gif" />
+    <None Include="Resources\hisseAlGif.gif" />
+    <None Include="Resources\gecmisButton1.ico" />
+    <None Include="Resources\kategoriButton1.ico" />
+    <None Include="Resources\analizButton1.ico" />
+    <None Include="Resources\hisseSatButton1.ico" />
+    <None Include="Resources\hisseAlButton1.ico" />
+    <None Include="Resources\portfoyButton1.ico" />
+    <None Include="Resources\portfoyumButton.ico" />
+    <None Include="Resources\portfoyGif.gif" />
+    <None Include="Resources\adamGif.gif" />
+    <None Include="Resources\dunyaGif.gif" />
+    <None Include="Resources\hisseler.png" />
+    <None Include="Resources\kaydol.png" />
+    <None Include="Resources\kaydolButton2.ico" />
+    <None Include="Resources\izleButton.ico" />
+    <None Include="Resources\hesabim1Button.ico" />
+    <None Include="Resources\fonlar1Button.ico" />
+    <None Include="Resources\hisseler1Button.ico" />
+    <None Include="Resources\anaSayfam.png" />
+    <None Include="Resources\geriDonS1.ico" />
+    <None Include="Resources\kaydolButton.ico" />
+    <None Include="Resources\girisButton.ico" />
+    <None Include="Resources\giris.png" />
+    <None Include="Resources\cikis.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

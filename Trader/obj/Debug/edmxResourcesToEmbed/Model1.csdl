@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VerilerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Fon">
+    <Key>
+      <PropertyRef Name="FonId" />
+    </Key>
+    <Property Name="FonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FonAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adet" Type="Int32" />
+    <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Toplam" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AlmaTarih" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="FonSonuc">
+    <Key>
+      <PropertyRef Name="SatilanFonId" />
+    </Key>
+    <Property Name="SatilanFon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Adet" Type="Int32" />
+    <Property Name="Kazanc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SatilanTarih" Type="DateTime" Precision="0" />
+    <Property Name="SatilanFonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Hisse">
+    <Key>
+      <PropertyRef Name="HisseId" />
+    </Key>
+    <Property Name="HisseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HisseAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Adet" Type="Int32" Nullable="false" />
+    <Property Name="Toplam" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AlmaTarihi" Type="DateTime" Precision="0" />
+    <Property Name="Kategori" Type="Int32" />
+    <NavigationProperty Name="Kategori1" Relationship="Self.FK_Hisse_Kategori" FromRole="Hisse" ToRole="Kategori" />
+  </EntityType>
+  <EntityType Name="HisseSonuc">
+    <Key>
+      <PropertyRef Name="SatilanHisseId" />
+    </Key>
+    <Property Name="SatilanHisseAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Adet" Type="Int32" />
+    <Property Name="Kazanc" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SatilanTarih" Type="DateTime" Precision="0" />
+    <Property Name="SatilanHisseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="KategoriId" />
+    </Key>
+    <Property Name="KategoriId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Hisse" Relationship="Self.FK_Hisse_Kategori" FromRole="Kategori" ToRole="Hisse" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="Kimlik" />
+    </Key>
+    <Property Name="Kimlik" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KullaniciAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Hisse_Kategori">
+    <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
+    <End Role="Hisse" Type="Self.Hisse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Hisse">
+        <PropertyRef Name="Kategori" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VerilerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Fon" EntityType="Self.Fon" />
+    <EntitySet Name="FonSonuc" EntityType="Self.FonSonuc" />
+    <EntitySet Name="Hisse" EntityType="Self.Hisse" />
+    <EntitySet Name="HisseSonuc" EntityType="Self.HisseSonuc" />
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Hisse_Kategori" Association="Self.FK_Hisse_Kategori">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Hisse" EntitySet="Hisse" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
